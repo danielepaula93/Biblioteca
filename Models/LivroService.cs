@@ -22,16 +22,18 @@ namespace Biblioteca.Models
                 Livro livro = bc.Livros.Find(l.Id);
                 livro.Autor = l.Autor;
                 livro.Titulo = l.Titulo;
+                livro.Ano = l.Ano;
 
                 bc.SaveChanges();
             }
         }
 
-        public ICollection<Livro> ListarTodos(FiltrosLivros filtro = null)
+        public ICollection<Livro> ListarTodos(int pagina=1, int tamanho=10, Filtragem filtro = null)
         {
             using(BibliotecaContext bc = new BibliotecaContext())
             {
                 IQueryable<Livro> query;
+                int pular = (pagina - 1)/tamanho;
                 
                 if(filtro != null)
                 {
@@ -58,7 +60,7 @@ namespace Biblioteca.Models
                 }
                 
                 //ordenação padrão
-                return query.OrderBy(l => l.Titulo).ToList();
+                return query.OrderBy(l => l.Titulo).Skip(pular).Take(tamanho).ToList();
             }
         }
 
@@ -80,6 +82,12 @@ namespace Biblioteca.Models
             using(BibliotecaContext bc = new BibliotecaContext())
             {
                 return bc.Livros.Find(id);
+            }
+        }
+
+        public int NumeroDeLivros() {
+            using(var context = new BibliotecaContext()) {
+                return context.Livros.Count();
             }
         }
     }
