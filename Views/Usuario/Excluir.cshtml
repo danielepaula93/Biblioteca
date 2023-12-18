@@ -1,0 +1,14 @@
+@model Biblioteca.Models.Usuario
+@{
+    ViewData["Title"] = "Exclusão de Usuários";
+}
+
+<h2>Confirmar exclusão</h2>
+
+<p>Tem certeza que deseja excluir o usuário: @Model.Nome?</p>
+
+<form asp-action="ConfirmarExclusao" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Confirmar</button>
+    <a asp-action="Listagem">Cancelar</a>
+</form>

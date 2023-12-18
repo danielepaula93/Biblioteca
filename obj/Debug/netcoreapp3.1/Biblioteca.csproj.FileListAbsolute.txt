@@ -55,3 +55,4 @@ C:\Users\conta\Downloads\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\
 C:\Users\conta\Downloads\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Edicao.cshtml.g.cs
 C:\Users\conta\Downloads\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Listagem.cshtml.g.cs
 C:\Users\conta\Downloads\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\_FormCadastro.cshtml.g.cs
+C:\Users\conta\Downloads\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Excluir.cshtml.g.cs
